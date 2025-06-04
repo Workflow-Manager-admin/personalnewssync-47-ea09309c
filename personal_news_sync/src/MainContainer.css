@@ -1,0 +1,229 @@
+:root {
+  --pns-primary: #1A73E8;
+  --pns-secondary: #F5F5F5;
+  --pns-accent: #FF7043;
+  --pns-bg-light: #ffffff;
+  --pns-bg-dark: #222e3a;
+  --pns-text: #222;
+  --pns-card-border: #e1e2e3;
+  --pns-radius: 18px;
+}
+
+.pns-main-container {
+  min-height: 100vh;
+  background: var(--pns-secondary);
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVBAR STYLES */
+.pns-navbar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+  min-height: 58px;
+  background: var(--pns-primary);
+  color: var(--pns-secondary);
+  box-shadow: 0 2px 8px 0 #004fc04c;
+}
+
+.pns-navbar__section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pns-navbar__logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  gap: 10px;
+  letter-spacing: 0.5px;
+}
+
+.pns-logo-symbol {
+  font-size: 1.45rem;
+}
+
+.pns-navbar__categories {
+  flex: 1;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pns-cat-btn {
+  font-size: 1rem;
+  background: transparent;
+  color: var(--pns-secondary);
+  border: none;
+  border-radius: 18px;
+  padding: 5px 16px;
+  margin: 0 2px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+}
+
+.pns-cat-btn.active,
+.pns-cat-btn:focus {
+  background: var(--pns-accent);
+  color: var(--pns-secondary);
+  border: 2px solid var(--pns-secondary);
+}
+
+.pns-settings-btn {
+  border-radius: 50%;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 1.27rem;
+  border: none;
+  background: rgba(0,0,0,0.04);
+  transition: background 0.2s;
+}
+.pns-settings-btn:hover {
+  background: var(--pns-accent);
+  color: var(--pns-secondary);
+}
+
+/* CONTENT ROOT */
+.pns-content-root {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 16px 32px 16px;
+  box-sizing: border-box;
+}
+
+/* ARTICLE FEED / CARDS */
+.pns-article-feed {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  width: 100%;
+  padding: 0 0 24px 0;
+}
+
+.pns-article-card {
+  background: var(--pns-bg-light);
+  border-radius: var(--pns-radius);
+  box-shadow: 0 2px 16px 0 #426ba11a;
+  border: 1px solid var(--pns-card-border);
+  width: 320px;
+  max-width: 96vw;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.14s, transform 0.14s;
+}
+.pns-article-card:hover {
+  box-shadow: 0 4px 32px 0 #18448425;
+  transform: translateY(-4px) scale(1.01);
+}
+
+.pns-card-img {
+  width: 100%;
+  height: 164px;
+  background: var(--pns-primary);
+  background-size: cover;
+  background-position: center;
+}
+.pns-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 22px 18px 18px 18px;
+  color: var(--pns-text);
+  flex: 1 1 auto;
+}
+.pns-card-title {
+  font-size: 1.23rem;
+  margin: 0 0 6px 0;
+  font-weight: 700;
+  color: var(--pns-primary);
+  line-height: 1.3;
+}
+.pns-card-summary {
+  font-size: 0.98rem;
+  color: #374151;
+  line-height: 1.5;
+  margin-bottom: 0.6rem;
+}
+.pns-card-meta {
+  font-size: 0.82rem;
+  color: #9099a4;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.pns-card-source {
+  color: var(--pns-accent);
+  font-weight: 600;
+}
+.pns-card-dot {
+  font-size: 1.1rem;
+  color: #b6bdc2;
+}
+
+/* NOTIFICATION */
+.pns-notification {
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-top: 12px;
+  box-shadow: 0 2px 6px 0 #ff704333;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .pns-content-root {
+    max-width: 99vw;
+    padding: 80px 2vw 24px 2vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .pns-navbar {
+    flex-direction: column;
+    min-height: unset;
+    gap: 8px;
+    padding: 10px 4vw;
+  }
+  .pns-navbar__categories {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .pns-content-root {
+    padding: 64px 2vw 18px 2vw;
+  }
+  .pns-article-feed {
+    gap: 18px;
+  }
+}
+
+.pns-footer-placeholder {
+  width: 100%;
+  padding: 22px 0 26px 0;
+  background: var(--pns-bg-dark);
+  color: var(--pns-secondary);
+  text-align: center;
+  letter-spacing: 0.08rem;
+  font-size: 1.04rem;
+}
+
+.pns-footer-placeholder__text {
+  opacity: 0.85;
+}
+
+/* Hide notification by default if not present */
+.pns-status-row:empty {
+  display: none;
+}
